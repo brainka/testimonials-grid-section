@@ -1,0 +1,213 @@
+:root {
+	--moderate-violet: hsl(263, 55%, 52%);
+	--light-violet: hsl(264, 82%, 70%);
+	--very-dark-grayish-blue: hsl(217, 19%, 35%);
+	--very-dark-grayish-blue-50: hsl(217, 19%, 35%, 50%);
+
+	--very-dark-grayish-blue-70: hsl(217, 19%, 70%);
+	--very-dark-blackish-blue: hsl(219, 29%, 14%);
+	--white: hsl(0, 0%, 100%);
+	--white-50: hsl(0, 0%, 100%, 50%);
+	--white-70: hsl(0, 0%, 100%, 70%);
+
+	--light-gray: hsl(0, 0%, 81%);
+	--light-grayish-blue: hsl(210, 46%, 95%);
+
+	--font-family: 'Barlow Semi Condensed', sans-serif;
+	--font-weight-medium: 500;
+	--font-weight-semi-bold: 600;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.3rem;
+	font-family: var(--font-family);
+	background-color: var(--light-grayish-blue);
+
+	display: grid;
+	justify-content: center;
+	align-items: center;
+
+	height: 100vh;
+}
+
+main {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: minmax(28.2rem, auto) minmax(26.6rem, auto);
+	gap: 2.4rem 3rem;
+	width: 100%;
+	max-width: 111rem;
+}
+
+.card {
+	display: grid;
+	border-radius: 0.8rem;
+	padding: 2.6rem 3.2rem;
+
+	box-shadow: 36px 43px 127px -26px rgba(0, 0, 0, 0.15);
+}
+
+.header {
+	display: grid;
+	grid-template-columns: 2.8rem 1fr;
+	gap: 1.7rem;
+	margin-bottom: 1.8rem;
+}
+
+h2 {
+	font-weight: var(--font-weight-medium);
+	font-size: 1.3rem;
+}
+
+.light-graduate,
+.dark-graduate {
+	font-size: 1.1rem;
+}
+
+.portrait {
+	border-radius: 50%;
+	width: 2.8rem;
+	height: 2.8rem;
+}
+
+.outline-light {
+	outline: 0.2rem solid var(--light-violet);
+}
+
+.outline-dark {
+	outline: 0.2rem solid var(--moderate-violet);
+}
+
+/* card background colours */
+.card-1 {
+	background-color: var(--moderate-violet);
+}
+
+.card-2 {
+	background-color: var(--very-dark-grayish-blue);
+}
+
+.card-3,
+.card-5 {
+	background-color: var(--white);
+}
+
+.card-4 {
+	background-color: var(--very-dark-blackish-blue);
+}
+
+/* card verified graduate paragraph colour */
+
+p.dark-graduate {
+	color: var(--white-50);
+}
+
+p.light-graduate {
+	color: var(--very-dark-grayish-blue-50);
+}
+
+.light-q {
+	color: var(--white-70);
+}
+
+.dark-q {
+	color: var(--very-dark-grayish-blue-70);
+}
+
+p.dark {
+	color: var(--very-dark-grayish-blue);
+}
+
+h2.light,
+p.light {
+	color: var(--white);
+}
+
+h2.dark {
+	color: var(--very-dark-grayish-blue);
+}
+
+.card > p {
+	font-size: 2rem;
+	margin-bottom: 2.4rem;
+	font-weight: var(--font-weight-semi-bold);
+}
+
+.card q {
+	font-size: 1.3rem;
+	line-height: 1.8rem;
+}
+
+/* grid areas */
+
+.card-1 {
+	grid-area: 1/1/2/3;
+
+	display: grid;
+	grid-template-rows: 2.4rem 5rem repeat(2, 1fr);
+	grid-template-columns: repeat(2, 1fr) 4.8rem;
+	padding-top: unset;
+}
+
+.card-1 .header {
+	grid-area: 2/1;
+}
+
+.card-1 .light {
+	grid-area: 3/1/4/4;
+}
+
+.card-1 q {
+	grid-area: 4/1/5/4;
+}
+
+.card-2 {
+	grid-area: 1/3/2/4;
+}
+
+.card-4 {
+	grid-area: 2/2/3/4;
+}
+
+.card-5 {
+	grid-area: 1/4/3/5;
+}
+
+.icon {
+	grid-area: 1/2/3/2;
+	justify-self: end;
+}
+
+@media screen and (max-width: 43.75em) {
+	main {
+		grid-template-columns: 1fr;
+	}
+
+	.card-1,
+	.card-2,
+	.card-3,
+	.card-4,
+	.card-5 {
+		grid-area: unset;
+	}
+
+	.icon {
+		grid-area: 1/2/3/4;
+	}
+
+	.card-1 {
+		grid-template-columns: 1fr 4.8rem;
+	}
+}
